@@ -1,7 +1,7 @@
 import 'package:toktik/domain/entities/video_post.dart';
 
-class VideoModel {
-  VideoModel({
+class LocalVideoModel {
+  LocalVideoModel({
     required this.name,
     required this.videoUrl,
     required this.likes,
@@ -13,11 +13,12 @@ class VideoModel {
   final int likes;
   final int views;
 
-  factory VideoModel.fromJson(Map<String, dynamic> json) => VideoModel(
-        name: json["name"],
+  factory LocalVideoModel.fromJson(Map<String, dynamic> json) =>
+      LocalVideoModel(
+        name: json["name"] ?? 'No Caption',
         videoUrl: json["videoUrl"],
-        likes: json["likes"],
-        views: json["views"],
+        likes: json["likes"] ?? 0,
+        views: json["views"] ?? 0,
       );
 
   Map<String, dynamic> toJson() => {
