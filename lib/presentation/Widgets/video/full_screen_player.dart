@@ -44,10 +44,13 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
               }
             },
             child: Stack(
+              fit: StackFit.expand,
               children: [
-                Center(
-                  child: AspectRatio(
-                    aspectRatio: videoPlayerController.value.aspectRatio,
+                FittedBox(
+                  fit: BoxFit.cover,
+                  child: SizedBox(
+                    height: 1,
+                    width: videoPlayerController.value.aspectRatio,
                     child: VideoPlayer(videoPlayerController),
                   ),
                 ),
