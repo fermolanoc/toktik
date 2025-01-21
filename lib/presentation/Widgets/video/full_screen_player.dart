@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toktik/presentation/Widgets/video/video_background.dart';
 import 'package:video_player/video_player.dart';
 
 class FullScreenPlayer extends StatefulWidget {
@@ -54,11 +55,12 @@ class _FullScreenPlayerState extends State<FullScreenPlayer> {
                     child: VideoPlayer(videoPlayerController),
                   ),
                 ),
+                VideoBackground(stops: const [0.7, 1.0]),
                 Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     height: 50,
-                    color: Colors.black54,
+                    // color: Colors.black54,
                     child: Center(
                       child: Text(
                         widget.caption,
